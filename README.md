@@ -92,10 +92,10 @@ az webapp up --name dominante-farbe-alban --resource-group dominantColorEU --pla
 https://dominante-farbe-alban.azurewebsites.net
 
 ### 🔵 Azure App UI (Live-Anwendung im Browser)
-![Web-App UI](images/azure-app-ui.png)
+![Web-App UI](screenshots/azure-ui.png)
 
 ### 📊 Azure Ressourcenübersicht
-![Azure Deployment Overview](images/azure-overview.png)
+![Azure Deployment Overview](screenshots/azure-ressource.png)
 
 ## Reflexion
 - Ich habe gelernt, wie man eine Flask-App mit klarer Trennung von Backend und Frontend strukturiert
@@ -109,7 +109,7 @@ https://dominante-farbe-alban.azurewebsites.net
 ### ⚙️ Virtuelle Umgebung mit venv
 Die Umgebung wurde direkt im Projektordner eingerichtet, um Abhängigkeiten isoliert zu verwalten.
 
-![Venv-Auswahl](images/venv.png)
+![Venv-Auswahl](screenshots/venv.png)
 
 ### 🚀 Azure Deployment via CLI
 Folgende CLI-Befehle wurden verwendet, um die App erfolgreich online zu deployen:
@@ -120,4 +120,4 @@ az appservice plan create --name dominantPlanEU --resource-group dominantColorEU
 az webapp up --name dominante-farbe-alban --resource-group dominantColorEU --plan dominantPlanEU --location westeurope --runtime "PYTHON:3.12" --logs
 ```
 
-![Azure Deployment Befehle](images/command.png)
+![Azure Deployment Befehle](screenshots/command.png)

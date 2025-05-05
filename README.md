@@ -24,7 +24,6 @@ bildanalyse-app/
 │   ├── index.html
 │   └── script.js
 └── .venv/
-└── __pycache__/
 ```
 
 ## Funktionsweise
@@ -92,8 +91,33 @@ az webapp up --name dominante-farbe-alban --resource-group dominantColorEU --pla
 **Live-App URL:**  
 https://dominante-farbe-alban.azurewebsites.net
 
+### 🔵 Azure App UI (Live-Anwendung im Browser)
+![Web-App UI](images/azure-app-ui.png)
+
+### 📊 Azure Ressourcenübersicht
+![Azure Deployment Overview](images/azure-overview.png)
+
 ## Reflexion
 - Ich habe gelernt, wie man eine Flask-App mit klarer Trennung von Backend und Frontend strukturiert
 - Die Kombination von `pip-tools`, Azure CLI und GitHub hat mir ein gutes Gefühl für sauberes Deployment vermittelt
 - Besonders spannend war es, Farbnamen aus RGB-Werten zu ermitteln (z. B. `(165, 42, 42)` → `brown`)
 - Beim nächsten Mal würde ich für produktionsnähere Projekte Gunicorn oder Uvicorn als Server einsetzen
+
+
+## Weitere technische Details
+
+### ⚙️ Virtuelle Umgebung mit venv
+Die Umgebung wurde direkt im Projektordner eingerichtet, um Abhängigkeiten isoliert zu verwalten.
+
+![Venv-Auswahl](images/venv.png)
+
+### 🚀 Azure Deployment via CLI
+Folgende CLI-Befehle wurden verwendet, um die App erfolgreich online zu deployen:
+
+```bash
+az group create --name dominantColorEU --location westeurope
+az appservice plan create --name dominantPlanEU --resource-group dominantColorEU --sku F1 --is-linux
+az webapp up --name dominante-farbe-alban --resource-group dominantColorEU --plan dominantPlanEU --location westeurope --runtime "PYTHON:3.12" --logs
+```
+
+![Azure Deployment Befehle](images/command.png)
